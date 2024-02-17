@@ -2,7 +2,6 @@ const textArea = document.querySelector(".input_textarea");
 const textOutput = document.querySelector(".aside_resultado_output");
 const textInicial = document.querySelector(".aside_resultado_inicial");
 
-/* Criterios de substituição das vogais */
 function substituirVogais(valueCrip) {
     const mapKeys = {
         e: "enter",
@@ -12,7 +11,6 @@ function substituirVogais(valueCrip) {
         u: "ufat",
     };
     const cripto = valueCrip.replace(/[aeiou]/g, (vogal) => mapKeys[vogal]);
-    /* O g neste caso, significa que pega todas as strings de maneira global, sem ele, apenas a primeira aparição será substituida */
     exibirResultado(cripto);
 }
 
@@ -54,7 +52,6 @@ function transformarTexto(botao) {
     }
 }
 
-/*função de exibir/ocultar imagem*/
 function exibirResultado(text) {
     textOutput.innerHTML = text;
     if (textOutput.innerHTML === "") {
@@ -64,7 +61,6 @@ function exibirResultado(text) {
     }
 }
 
-/* Botão copiar */
 const botaoCopiar = document.querySelector(".aside_button_copy");
 botaoCopiar.addEventListener("click", (copiar = () => {
     const textsaida = document.querySelector(".aside_resultado_output");
@@ -81,13 +77,11 @@ botaoCopiar.addEventListener("click", (copiar = () => {
     })
 );
 
-/* Função para mostrar o botão "Copiar" */
 function mostrarBotaoCopiar() {
     const botaoCopiar = document.querySelector(".aside_button_copy");
     botaoCopiar.style.display = "inline-block"; // Exibir o botão
 }
 
-// Função para ocultar o botão "Copiar"
 function ocultarBotaoCopiar() {
     const botaoCopiar = document.querySelector(".aside_button_copy");
     botaoCopiar.style.display = "none"; // Oculta o botão
